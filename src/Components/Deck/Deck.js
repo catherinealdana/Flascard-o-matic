@@ -27,20 +27,23 @@ function Deck() {
   }, [deckId]);
 
   async function handleDeleteDeck(deck) {
-    if (
-      window.confirm(`Are you sure you want to permanently delete this Deck?`)
-    ) {
-      history.go(0);
-      return await deleteDeck(deck.id);
+    if (window.confirm(`Are you sure you want to permanently delete this Deck?`)) {
+      try {
+        await deleteDeck(deck.id);
+      
+      } catch (error) {
+      
+      }
     }
   }
 
-  async function handleDeleteCard(card) {
-    if (
-      window.confirm(`Are you sure you want to permanently delete this card?`)
-    ) {
-      history.go(0);
-      return await deleteCard(card.id);
+  function handleDeleteCard(card) {
+    if (window.confirm(`Are you sure you want to permanently delete this card?`)) {
+      deleteCard(card.id)
+        .then(() => {
+          })
+        .catch((error) => {
+        });
     }
   }
 

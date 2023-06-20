@@ -1,4 +1,29 @@
 {
-  "decks": [],
-  "cards": []
+  "decks": [
+    {
+      "name": "Rendering in React",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation.",
+      "id": 1
+    }
+  ],
+  "cards": [
+    {
+      "front": "Differentiate between Real DOM and Virtual DOM.",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "deckId": 1,
+      "id": 1
+    },
+    {
+      "front": "ljjlkjl",
+      "back": "fdlvdml;hijm;dijm;",
+      "deckId": 1,
+      "id": 2
+    },
+    {
+      "front": "gdfvojsoaijmov;s",
+      "back": "rlvgijmioz;j",
+      "deckId": 1,
+      "id": 3
+    }
+  ]
 }

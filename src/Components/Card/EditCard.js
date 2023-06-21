@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {useParams,useHistory,Link,} from "react-router-dom/cjs/react-router-dom.min";
+import {useParams,useHistory,Link,} from "react-router-dom";
 import { readDeck, readCard, updateCard } from "../../utils/api";
 import CardForm from "./CardForm";
 
@@ -45,8 +45,8 @@ function EditCard() {
     });
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(element) {
+    element.preventDefault();
 
     const abortController = new AbortController();
     const response = await updateCard({ ...card }, abortController.signal);

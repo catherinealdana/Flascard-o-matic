@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Link,useHistory,useParams,} from "react-router-dom/cjs/react-router-dom.min";
+import {Link,useHistory,useParams,} from "react-router-dom";
 import { createCard } from "../../utils/api";
 import { readDeck } from "../../utils/api";
 import CardForm from "./CardForm";
@@ -10,7 +10,7 @@ function AddCard() {
   const initialCardState = {front: " ",back: " ",};
   const [deck, setDeck] = useState([]);
   const [newCard, setNewCard] = useState(initialCardState);
-  const editCard = false;
+  const editCard = (false);
 
   useEffect(() => {
     async function fetchData() {

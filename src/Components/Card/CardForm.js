@@ -1,14 +1,6 @@
 import React from "react";
 
-function CardForm({
-  handleSubmit,
-  handleChange,
-  handleDone,
-  card,
-  deck,
-  edit,
-  newCard,
-}) {
+function CardForm({handleSubmit,handleChange,handleDone,card,deck,edit,newCard,}) {
   return (
     <form onSubmit={handleSubmit}>
       {edit === true ? (
@@ -24,7 +16,7 @@ function CardForm({
           className="form-control"
           onChange={handleChange}
           type="text"
-          placeholder="Front side of card."
+          placeholder="Front of the Card"
           value={card ? card.front : newCard.value}
         />
       </div>
@@ -36,7 +28,7 @@ function CardForm({
           className="form-control"
           onChange={handleChange}
           type="text"
-          placeholder="Back side of card."
+          placeholder="Back of the Card"
           value={card ? card.back : newCard.value}
         />
       </div>

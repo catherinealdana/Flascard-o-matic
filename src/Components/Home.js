@@ -1,11 +1,12 @@
 import React from "react";
 import { listDecks, deleteDeck } from "../utils/api";
-import {  Link } from "react-router-dom/cjs/react-router-dom.min";
+import {  Link, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Home() {
  
   const [decks, setDecks] = useState([]);
+  const history= useHistory();
 
   useEffect(() => {
     async function fetchData() {
@@ -24,17 +25,14 @@ function Home() {
   }, []);
 
   async function handleDelete(deck) {
-    const confirmed = window.confirm("Are you sure you want to permanently delete this Deck?");
-  
-    if (confirmed) {
-      try {
-        await deleteDeck(deck.id);
-     
-      } catch (error) {
-        console.error("Something went wrong", error);
-      }
+    if (
+      window.confirm(`Are you sure you want to permanently delete this Deck?`)
+    ) {
+      history.go(0);
+      return await deleteDeck(deck.id);
     }
   }
+
   
 
   const listOfDecks = decks.map((deck) => {
